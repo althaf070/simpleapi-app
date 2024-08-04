@@ -8,8 +8,6 @@ function App() {
 
   const fetchProducts = async() =>{
 const res = await fetch("http://localhost:5000/api/products")
-// https://simpleapi-app.onrender.com/api/products
-
 const data = await res.json()
 setDatas(data)
   }
