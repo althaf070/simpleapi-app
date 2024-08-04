@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 
 import './App.css'
+import ProductForm from './assets/ProductsForm'
 
 function App() {
   const [datas, setDatas] = useState([])
 
   const fetchProducts = async() =>{
 const res = await fetch("http://localhost:5000/api/products")
+// https://simpleapi-app.onrender.com/api/products
+
 const data = await res.json()
 setDatas(data)
   }
@@ -22,6 +25,7 @@ fetchProducts()
         <p>{item.quantity}</p>
       </div>
     ))}
+    <ProductForm/>
     </>
   )
 }
